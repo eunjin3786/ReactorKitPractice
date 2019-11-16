@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_ReactorKitPractice_ReactorKitPracticeUITests : NSObject
+@end
+@implementation PodsDummy_Pods_ReactorKitPractice_ReactorKitPracticeUITests
+@end
