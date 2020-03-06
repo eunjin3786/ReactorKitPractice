@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		ACAC424F2371A3ED00ADD5E1 /* ReactorKitPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC424E2371A3ED00ADD5E1 /* ReactorKitPracticeTests.swift */; };
 		ACAC425A2371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC42592371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift */; };
 		B07E080124FAB8266220B2DD /* Pods_ReactorKitPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0396D02F60E8935CB93D9 /* Pods_ReactorKitPractice.framework */; };
+		C27090DA241260C30001F7EB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090D9241260C30001F7EB /* SettingViewController.swift */; };
+		C27090DC241261400001F7EB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090DB241261400001F7EB /* UserService.swift */; };
+		C27090DE241262000001F7EB /* CounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090DD241262000001F7EB /* CounterViewReactor.swift */; };
+		C27090E0241262250001F7EB /* SettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090DF241262250001F7EB /* SettingViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		ACAC42552371A3ED00ADD5E1 /* ReactorKitPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAC42592371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactorKitPracticeUITests.swift; sourceTree = "<group>"; };
 		ACAC425B2371A3ED00ADD5E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27090D9241260C30001F7EB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C27090DB241261400001F7EB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C27090DD241262000001F7EB /* CounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactor.swift; sourceTree = "<group>"; };
+		C27090DF241262250001F7EB /* SettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewReactor.swift; sourceTree = "<group>"; };
 		EF2F069B0C2812E27F9D8C0F /* Pods-ReactorKitPractice-ReactorKitPracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactorKitPractice-ReactorKitPracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReactorKitPractice-ReactorKitPracticeUITests/Pods-ReactorKitPractice-ReactorKitPracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +119,6 @@
 				962633FF464FCAE7BBDDB651 /* Pods-ReactorKitPracticeTests.debug.xcconfig */,
 				5926CB99DC0688655FA19570 /* Pods-ReactorKitPracticeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,6 +150,10 @@
 				ACAC42372371A3E700ADD5E1 /* AppDelegate.swift */,
 				ACAC42392371A3E700ADD5E1 /* SceneDelegate.swift */,
 				ACAC423B2371A3E700ADD5E1 /* CounterViewController.swift */,
+				C27090DD241262000001F7EB /* CounterViewReactor.swift */,
+				C27090D9241260C30001F7EB /* SettingViewController.swift */,
+				C27090DF241262250001F7EB /* SettingViewReactor.swift */,
+				C27090DB241261400001F7EB /* UserService.swift */,
 				ACAC42422371A3ED00ADD5E1 /* LaunchScreen.storyboard */,
 				ACAC423D2371A3E700ADD5E1 /* Main.storyboard */,
 				ACAC42402371A3ED00ADD5E1 /* Assets.xcassets */,
@@ -408,9 +419,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27090DE241262000001F7EB /* CounterViewReactor.swift in Sources */,
 				ACAC423C2371A3E700ADD5E1 /* CounterViewController.swift in Sources */,
+				C27090DC241261400001F7EB /* UserService.swift in Sources */,
+				C27090E0241262250001F7EB /* SettingViewReactor.swift in Sources */,
 				ACAC42382371A3E700ADD5E1 /* AppDelegate.swift in Sources */,
 				ACAC423A2371A3E700ADD5E1 /* SceneDelegate.swift in Sources */,
+				C27090DA241260C30001F7EB /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
