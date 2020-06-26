@@ -10,7 +10,7 @@ protocol UserServiceProtocol {
     func updateUserName(to name: String) -> Observable<String>
 }
 
-class UserService: UserServiceProtocol {
+class UserService: BaseService, UserServiceProtocol {
     let event = PublishSubject<UserEvent>()
     
     func updateUserName(to name: String) -> Observable<String> {

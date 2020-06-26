@@ -23,17 +23,17 @@ class SettingViewReactor: Reactor {
     }
     
     let initialState: State
-    let service: UserServiceProtocol
+    let provider: ServiceProviderProtocol
     
-    init(service: UserServiceProtocol, userName: String) {
+    init(provider: ServiceProviderProtocol, userName: String) {
         self.initialState = State(userName: userName)
-        self.service = service
+        self.provider = provider
     }
     
     func mutate(action: SettingViewReactor.Action) -> Observable<SettingViewReactor.Mutation> {
         switch action {
         case .saveUserName(let name):
-            return service.updateUserName(to: name)
+            return provider.userService.updateUserName(to: name)
                 .map { _ in .dismiss }
         case .cancel:
             return Observable.just(.dismiss)

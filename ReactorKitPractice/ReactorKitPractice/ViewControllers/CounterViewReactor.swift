@@ -22,23 +22,44 @@ class CounterViewReactor: Reactor {
     }
     
     let initialState: State
-    let service: UserServiceProtocol
+    let provider: ServiceProviderProtocol
     
-    init(service: UserServiceProtocol) {
+    init(provider: ServiceProviderProtocol) {
         self.initialState = State()
-        self.service = service
+        self.provider = provider
     }
 
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let eventMutation = service.event.flatMap { event -> Observable<Mutation> in
+        let eventMutation = provider.userService.event.flatMap { event -> Observable<Mutation> in
             switch event {
             case .updateUserName(let name):
                 return .just(.updateUserName(name))
             }
         }
         return Observable.merge(mutation, eventMutation)
+        
     }
     
+    func transform(action: Observable<Action>) -> Observable<Action> {
+        let eventAction = provider.userService.event.flatMap { event -> Observable<Action> in
+            switch event {
+            case .updateUserName:
+                return .just(.increase)
+            }
+        }
+        return Observable.merge(action, eventAction)
+    }
+
+    func transform(state: Observable<State>) -> Observable<State> {
+        let eventState = provider.userService.event.flatMap { event -> Observable<State> in
+            switch event {
+            case .updateUserName(let name):
+                return .just(State(value: 1, isLoading: false, userName: name))
+            }
+        }
+        return Observable.merge(state, eventState)
+    }
+
     func mutate(action: CounterViewReactor.Action) -> Observable<CounterViewReactor.Mutation> {
         switch action {
         case .increase:
@@ -72,7 +93,7 @@ class CounterViewReactor: Reactor {
     }
     
     func reactorForSetting() -> SettingViewReactor {
-        return SettingViewReactor(service: service,
+        return SettingViewReactor(provider: provider,
                                   userName: currentState.userName)
     }
 }

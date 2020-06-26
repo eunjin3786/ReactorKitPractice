@@ -18,6 +18,8 @@
 		ACAC424F2371A3ED00ADD5E1 /* ReactorKitPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC424E2371A3ED00ADD5E1 /* ReactorKitPracticeTests.swift */; };
 		ACAC425A2371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC42592371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift */; };
 		B07E080124FAB8266220B2DD /* Pods_ReactorKitPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0396D02F60E8935CB93D9 /* Pods_ReactorKitPractice.framework */; };
+		C254B69824A5AD1000CB8981 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254B69724A5AD1000CB8981 /* ServiceProvider.swift */; };
+		C254B69A24A5AD1F00CB8981 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254B69924A5AD1F00CB8981 /* BaseService.swift */; };
 		C27090DA241260C30001F7EB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090D9241260C30001F7EB /* SettingViewController.swift */; };
 		C27090DC241261400001F7EB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090DB241261400001F7EB /* UserService.swift */; };
 		C27090DE241262000001F7EB /* CounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27090DD241262000001F7EB /* CounterViewReactor.swift */; };
@@ -64,6 +66,8 @@
 		ACAC42552371A3ED00ADD5E1 /* ReactorKitPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAC42592371A3ED00ADD5E1 /* ReactorKitPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactorKitPracticeUITests.swift; sourceTree = "<group>"; };
 		ACAC425B2371A3ED00ADD5E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C254B69724A5AD1000CB8981 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		C254B69924A5AD1F00CB8981 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		C27090D9241260C30001F7EB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C27090DB241261400001F7EB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C27090DD241262000001F7EB /* CounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactor.swift; sourceTree = "<group>"; };
@@ -147,13 +151,10 @@
 		ACAC42362371A3E700ADD5E1 /* ReactorKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				C254B69624A5ACF800CB8981 /* Services */,
+				C254B69B24A5AD3100CB8981 /* ViewControllers */,
 				ACAC42372371A3E700ADD5E1 /* AppDelegate.swift */,
 				ACAC42392371A3E700ADD5E1 /* SceneDelegate.swift */,
-				ACAC423B2371A3E700ADD5E1 /* CounterViewController.swift */,
-				C27090DD241262000001F7EB /* CounterViewReactor.swift */,
-				C27090D9241260C30001F7EB /* SettingViewController.swift */,
-				C27090DF241262250001F7EB /* SettingViewReactor.swift */,
-				C27090DB241261400001F7EB /* UserService.swift */,
 				ACAC42422371A3ED00ADD5E1 /* LaunchScreen.storyboard */,
 				ACAC423D2371A3E700ADD5E1 /* Main.storyboard */,
 				ACAC42402371A3ED00ADD5E1 /* Assets.xcassets */,
@@ -178,6 +179,27 @@
 				ACAC425B2371A3ED00ADD5E1 /* Info.plist */,
 			);
 			path = ReactorKitPracticeUITests;
+			sourceTree = "<group>";
+		};
+		C254B69624A5ACF800CB8981 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C254B69724A5AD1000CB8981 /* ServiceProvider.swift */,
+				C254B69924A5AD1F00CB8981 /* BaseService.swift */,
+				C27090DB241261400001F7EB /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C254B69B24A5AD3100CB8981 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACAC423B2371A3E700ADD5E1 /* CounterViewController.swift */,
+				C27090DD241262000001F7EB /* CounterViewReactor.swift */,
+				C27090D9241260C30001F7EB /* SettingViewController.swift */,
+				C27090DF241262250001F7EB /* SettingViewReactor.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,9 +445,11 @@
 				ACAC423C2371A3E700ADD5E1 /* CounterViewController.swift in Sources */,
 				C27090DC241261400001F7EB /* UserService.swift in Sources */,
 				C27090E0241262250001F7EB /* SettingViewReactor.swift in Sources */,
+				C254B69824A5AD1000CB8981 /* ServiceProvider.swift in Sources */,
 				ACAC42382371A3E700ADD5E1 /* AppDelegate.swift in Sources */,
 				ACAC423A2371A3E700ADD5E1 /* SceneDelegate.swift in Sources */,
 				C27090DA241260C30001F7EB /* SettingViewController.swift in Sources */,
+				C254B69A24A5AD1F00CB8981 /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
