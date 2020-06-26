@@ -40,26 +40,6 @@ class CounterViewReactor: Reactor {
         
     }
     
-    func transform(action: Observable<Action>) -> Observable<Action> {
-        let eventAction = provider.userService.event.flatMap { event -> Observable<Action> in
-            switch event {
-            case .updateUserName:
-                return .just(.increase)
-            }
-        }
-        return Observable.merge(action, eventAction)
-    }
-
-    func transform(state: Observable<State>) -> Observable<State> {
-        let eventState = provider.userService.event.flatMap { event -> Observable<State> in
-            switch event {
-            case .updateUserName(let name):
-                return .just(State(value: 1, isLoading: false, userName: name))
-            }
-        }
-        return Observable.merge(state, eventState)
-    }
-
     func mutate(action: CounterViewReactor.Action) -> Observable<CounterViewReactor.Mutation> {
         switch action {
         case .increase:
